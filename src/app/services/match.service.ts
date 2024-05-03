@@ -42,6 +42,7 @@ export class MatchService {
   );
 }
 getMarcador(): Observable<any[]>{
+  console.log('hola');
   return this.http.get<any[]>('http://localhost:4001/api/marcador');
 }
 getMatchDetails(): Observable<MatchDetails[]> {
