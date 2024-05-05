@@ -19,8 +19,8 @@
       <thead>
         <tr>
           <th class="custom-table" scope="col">Player</th > 
-          <th class="custom-table1" scope="col">Ataque</th >
-          <th class="custom-table" scope="col">Saque</th >
+          <th class="custom-table1" scope="col">Saque</th >
+          <th class="custom-table" scope="col">Ataque</th >
           <th class="custom-table1" scope="col">Zaguero</th >
           <th class="custom-table" scope="col">Finta</th >
           <th  class="custom-table1" scope="col">Bloqueo</th >
@@ -33,8 +33,9 @@
       <tbody *ngFor="let player_name of getObjectKeys(selectedSet.data)">
         <tr >
           <td class="custom-table" scope="row">{{ player_name || 'Nombre Desconocido' }}</td>
-          <td>{{ selectedSet.data[player_name]?.Ataque || 0 }}</td>
+          
           <td>{{ selectedSet.data[player_name]?.Saque || 0 }}</td>
+          <td>{{ selectedSet.data[player_name]?.Ataque || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.Zaguero || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.Finta || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.Bloqueo || 0 }}</td>
@@ -52,8 +53,9 @@
       <thead>
         <tr>
           <th class="custom-table" scope="col">Player</th >
-          <th class="custom-table1"scope="col">Fallo Ataque</th >
-          <th class="custom-table"scope="col">FalloSaque</th >
+          <th class="custom-table1"scope="col">FalloSaque</th >
+          <th class="custom-table"scope="col">Fallo Ataque</th >
+          
           <th class="custom-table1" scope="col">Gorro</th >
           <th class="custom-table"scope="col">Recepcion</th >
           <th class="custom-table1"scope="col">EX</th >
@@ -67,8 +69,8 @@
         <tr >
           <td class="custom-table" scope="row">{{ player_name || 'Nombre Desconocido' }}</td>
          
-          <td>{{ selectedSet.data[player_name]?.FalloAtaque || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.FalloSaque || 0 }}</td>
+          <td>{{ selectedSet.data[player_name]?.FalloAtaque || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.Gorro || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.Recepcion || 0 }}</td>
           <td>{{ selectedSet.data[player_name]?.EX || 0 }}</td>

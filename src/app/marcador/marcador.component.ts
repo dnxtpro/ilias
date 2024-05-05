@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy,AfterViewInit } from '@angular/core';
 import { MatchService } from '../services/match.service';
 import { Router } from '@angular/router';
 
@@ -8,17 +8,23 @@ import { Router } from '@angular/router';
   templateUrl: './marcador.component.html',
   styleUrl: './marcador.component.css'
 })
-export class MarcadorComponent implements OnInit,OnDestroy {
+export class MarcadorComponent implements AfterViewInit,OnInit {
   marcador: any = [];
   private intervalo: any;
   constructor(private matchService: MatchService, private router: Router) {
+    this.getMarcador();
+  }
+  ngOnInit(): void {
+  this.getMarcador();
+}
+ngAfterViewInit(): void {
+  this.intervalo = setInterval(() => {
+    this.getMarcador();
+  }, 5000);
+  console.log('sale del bucle')
+
 }
 
-  ngOnInit(): void {
-    this.intervalo = setInterval(() => {
-      this.getMarcador();
-    }, 5000);
-  }
   getMarcador(){
     console.log('getmarcador')
   this.matchService.getMarcador().subscribe((data) => {

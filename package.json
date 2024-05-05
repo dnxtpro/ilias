@@ -31,6 +31,7 @@
     "file-saver": "^2.0.5",
     "git": "^0.1.5",
     "hammerjs": "^2.0.8",
+    "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz",
